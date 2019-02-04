@@ -6,11 +6,11 @@ let totalWidth;
 let rectMaxHeight;
 let rectCount;
 let seed;
-let image;
+let webImage;
 
 function preload() {
-    // Image source: https://unsplash.com/photos/cC3PtGqsh8Q by Paul Dufour
-    image = loadImage('https://images.unsplash.com/photo-1487171961746-31db1c9c35a9?ixlib=rb-0.3.5&s=6d4ff82da07aedbb2580c557edbc7afb&auto=format&fit=crop&w=1038&q=80');
+    // webImage source: https://unsplash.com/photos/cC3PtGqsh8Q by Paul Dufour
+    webImage = loadImage('https://images.unsplash.com/photo-1487171961746-31db1c9c35a9?ixlib=rb-0.3.5&s=6d4ff82da07aedbb2580c557edbc7afb&auto=format&fit=crop&w=1038&q=80');
 }
 
 function setup() {
@@ -24,9 +24,9 @@ function setup() {
     rectCount = 10;
     rectColors = [];
     for (let i = 0; i < rectCount; i++) {
-        let x = floor(random(image.width)); // Selection of a random location within the image
-        let y = floor(random(image.height));
-        let c = image.get(x, y); // Get the image's color at location (x, y)
+        let x = floor(random(webImage.width)); // Selection of a random location within the webImage
+        let y = floor(random(webImage.height));
+        let c = webImage.get(x, y); // Get the webImage's color at location (x, y)
         rectColors.push(c);
     }
 }
